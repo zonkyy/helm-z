@@ -31,6 +31,7 @@
 
 
 (defun helm-z-cd ()
+  "Change directory by shell."
   (call-process-shell-command (format "cd %s" (dired-current-directory))))
 (add-hook 'dired-after-readin-hook 'helm-z-cd)
 
@@ -45,6 +46,7 @@
 
 ;;;###autoload
 (defun helm-z ()
+  "Show z directory list by helm."
   (interactive)
   (helm :sources '(helm-source-z)
         :buffer "*Helm z source*"))
