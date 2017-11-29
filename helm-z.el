@@ -1,11 +1,10 @@
 ;;; helm-z.el --- Show z directory list with helm.el support.
 
 ;; Copyright (C) 2017 by yynozk
-
 ;; Author: yynozk <yynozk@gmail.com>
+;; URL: https://github.com/yynozk/helm-z
 ;; Version: 0.1
 ;; Package-Requires: ((helm "1.0"))
-;; Keywords: helm, dired, z
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -20,9 +19,9 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-;;; Installation:
+;;; Commentary:
 
-;; (require 'helm-z)
+;; This package provides a helm interface for z.
 
 ;;; Code:
 
@@ -36,7 +35,7 @@
 (add-hook 'dired-after-readin-hook 'helm-z-cd)
 
 
-(defvar helm-source-z
+(defvar helm-z-source
   (helm-build-in-buffer-source "z"
     :init (lambda ()
             (helm-init-candidates-in-buffer 'global
@@ -52,3 +51,4 @@
 
 
 (provide 'helm-z)
+;;; helm-z.el ends here
