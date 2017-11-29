@@ -48,7 +48,7 @@
 (defun helm-z ()
   "Show z directory list by helm."
   (interactive)
-  (helm :sources '(helm-source-z)
+  (helm :sources '(helm-z-source)
         :buffer "*Helm z source*"))
 
 
