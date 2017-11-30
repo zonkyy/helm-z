@@ -40,7 +40,7 @@
   (helm-build-in-buffer-source "z"
     :init (lambda ()
             (helm-init-candidates-in-buffer 'global
-              (shell-command-to-string "z -l | sed 's/[0-9]*[[:space:]]*//'")))
+              (shell-command-to-string "sort -r -t '|' -k 3,3 $Z_DATA | sed 's/|.*//'")))
     :action '(("Go" . (lambda (candidate) (dired candidate))))))
 
 
