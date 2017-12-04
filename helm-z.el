@@ -32,7 +32,7 @@
 
 (defun helm-z-cd ()
   "Change directory by shell."
-  (call-process-shell-command (format "cd %s" (dired-current-directory))))
+  (call-process-shell-command (format "cd %s" (shell-quote-argument (dired-current-directory)))))
 (add-hook 'dired-after-readin-hook 'helm-z-cd)
 
 
