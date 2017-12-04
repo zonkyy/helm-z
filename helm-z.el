@@ -30,6 +30,11 @@
 (require 'dired)
 
 
+;; Check $Z_DATA
+(if (not (equal (shell-command "test -e \"$Z_DATA\"") 0))
+    (error "$Z_DATA not found."))
+
+
 (defun helm-z-cd ()
   "Change directory by shell."
   (call-process-shell-command (format "cd %s" (shell-quote-argument (dired-current-directory)))))
